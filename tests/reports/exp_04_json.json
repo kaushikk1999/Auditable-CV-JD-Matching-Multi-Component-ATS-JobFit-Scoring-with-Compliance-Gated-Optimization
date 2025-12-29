@@ -1,0 +1,10 @@
+{
+  "id": "EXP-04",
+  "name": "JSON Export",
+  "status": "PASS",
+  "details": [
+    "JSON structure valid and reloadable",
+    "JSON export valid"
+  ],
+  "artifacts": []
+}

@@ -1,0 +1,101 @@
+# Python
+venv/
+env/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+secret*.json
+secrets.toml
+.streamlit/secrets.toml
+
+# API Keys & Tokens
+**/api_key*
+**/token*
+**/*secret*
+**/*password*
+**/*credential*
+
+# Data files (raw/processed)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/cv_raw.txt
+!data/raw/jd_raw.txt
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/jd_parsed.json
+
+# User uploads & generated files
+*.pdf
+*.docx
+*.doc
+!dummy_cv.pdf
+!dummy_cv.docx
+*.txt
+!requirements.txt
+!dummy_cv.txt
+!dummy_cv.txt
+!test_jd.txt
+
+# Test outputs & temporary files
+test_output/
+test_exports/
+*.tmp
+*.temp
+*.cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Experiment results (may contain PII)
+experiments/*/
+!experiments/.gitkeep
+research_package/experiments/*/
+!research_package/experiments/.gitkeep
+
+# Research Package (generated artifact)
+research_package.zip
+
+# Experiments should only be in research_package/
+/experiments/
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+

@@ -1,0 +1,12 @@
+{
+  "id": "ASM-01",
+  "name": "Entity Preservation",
+  "status": "PASS",
+  "details": [
+    "Education preserved exactly",
+    "Contact info preserved exactly",
+    "Experience entities preserved",
+    "All entities preserved correctly"
+  ],
+  "artifacts": []
+}

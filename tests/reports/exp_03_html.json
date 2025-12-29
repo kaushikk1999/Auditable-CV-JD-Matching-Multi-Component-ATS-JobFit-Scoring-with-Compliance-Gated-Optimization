@@ -1,0 +1,11 @@
+{
+  "id": "EXP-03",
+  "name": "HTML Export",
+  "status": "PASS",
+  "details": [
+    "Valid HTML tags found",
+    "Bootstrap reference found",
+    "HTML export valid"
+  ],
+  "artifacts": []
+}

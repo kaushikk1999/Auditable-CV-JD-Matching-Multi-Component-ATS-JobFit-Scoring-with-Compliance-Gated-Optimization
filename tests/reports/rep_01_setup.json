@@ -1,0 +1,9 @@
+{
+  "id": "REP-01",
+  "name": "Reproducibility Setup",
+  "status": "PASS",
+  "details": [
+    "Reproducibility scripts and config present"
+  ],
+  "artifacts": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": "EXP-01",
+  "name": "PDF Export",
+  "status": "PASS",
+  "details": [
+    "PDF created (1356 bytes)",
+    "Valid PDF header detected",
+    "PDF export valid"
+  ],
+  "artifacts": []
+}

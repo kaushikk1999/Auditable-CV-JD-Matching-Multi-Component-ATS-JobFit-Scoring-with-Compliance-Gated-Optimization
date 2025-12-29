@@ -1,0 +1,10 @@
+{
+  "id": "EXP-05",
+  "name": "TXT Export",
+  "status": "PASS",
+  "details": [
+    "TXT output generated and clean",
+    "TXT export valid"
+  ],
+  "artifacts": []
+}

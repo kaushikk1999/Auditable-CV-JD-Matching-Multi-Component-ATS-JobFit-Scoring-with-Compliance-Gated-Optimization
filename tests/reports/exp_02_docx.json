@@ -1,0 +1,11 @@
+{
+  "id": "EXP-02",
+  "name": "DOCX Export",
+  "status": "PASS",
+  "details": [
+    "DOCX created (36844 bytes)",
+    "Valid DOCX structure detected",
+    "DOCX export valid"
+  ],
+  "artifacts": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "DEP-01",
+  "name": "Deployment Config",
+  "status": "PASS",
+  "details": [
+    "config.toml valid",
+    "Procfile valid",
+    "requirements.txt present",
+    "Deployment config valid"
+  ],
+  "artifacts": []
+}

@@ -1,0 +1,47 @@
+# Scoring Configuration v1.0
+# Phase 5: ATS & Job-Compatibility Scoring
+
+version: "1.0"
+random_seed: 42
+
+# ATS Score Weights
+ats_weights:
+  lexical_coverage: 0.30
+  fuzzy_coverage: 0.15
+  tfidf_relevance: 0.25
+  tfidf_cosine_similarity: 0.20
+  section_distribution: 0.10
+
+# Job-Compatibility Weights
+jobfit_weights:
+  summary_similarity: 0.20
+  experience_alignment: 0.35
+  skills_alignment: 0.25
+  education_match: 0.10
+  domain_relevance: 0.10
+
+# Thresholds
+score_bands:
+  poor: [0, 50]
+  medium: [50, 75]
+  strong: [75, 90]
+  excellent: [90, 100]
+
+# Model Configurations
+models:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  embedding_device: "cpu"  # or "cuda" if GPU available
+  fuzzy_threshold: 90.0  # minimum similarity for fuzzy match
+
+
+# Feature Extraction
+tokenization:
+  lowercase: true
+  min_token_length: 2
+  remove_stopwords: false  # Keep for TF-IDF/BM25
+  remove_punctuation: true
+
+# Normalization
+normalization:
+  tfidfcos_min: 0.0  # Will be updated during benchmark calibration
+  tfidfcos_max: 10.0  # Will be updated during benchmark calibration

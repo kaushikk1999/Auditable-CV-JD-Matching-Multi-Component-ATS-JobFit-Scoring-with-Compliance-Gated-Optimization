@@ -1,0 +1,13 @@
+{
+  "id": "ASM-02",
+  "name": "Content Merging",
+  "status": "PASS",
+  "details": [
+    "Summary used from optimized",
+    "Experience bullets used from optimized",
+    "Projects used from optimized",
+    "Certifications fell back to original",
+    "Content merging logic correct"
+  ],
+  "artifacts": []
+}

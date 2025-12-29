@@ -1,0 +1,13 @@
+{
+  "id": "E2E-01",
+  "name": "Full Pipeline Integration",
+  "status": "PASS",
+  "details": [
+    "Assembly step completed",
+    "Compliance checks failed: ['buzzword_audit', 'stopword_audit', 'word_uniqueness']",
+    "Final Scores - ATS: 24.12674128718081, JobFit: 40.0",
+    "Exports generated successfully",
+    "End-to-End pipeline logic verified"
+  ],
+  "artifacts": []
+}

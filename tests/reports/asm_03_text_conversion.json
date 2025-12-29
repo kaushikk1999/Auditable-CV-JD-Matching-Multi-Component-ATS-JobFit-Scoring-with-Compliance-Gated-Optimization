@@ -1,0 +1,13 @@
+{
+  "id": "ASM-03",
+  "name": "Text Conversion",
+  "status": "PASS",
+  "details": [
+    "All sections present",
+    "Headers formatted correctly",
+    "Bullets formatted with •",
+    "Contact info at top",
+    "Text conversion rules satisfied"
+  ],
+  "artifacts": []
+}

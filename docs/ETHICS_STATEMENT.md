@@ -1,0 +1,226 @@
+# Ethics Statement
+
+**Project:** ATS CV Optimizer  
+**Date:** 2025-12-28  
+**Version:** 1.0
+
+---
+
+## Research Ethics Overview
+
+This project involves the development and validation of an automated CV optimization system. This ethics statement addresses key ethical considerations related to data collection, privacy, and research integrity.
+
+---
+
+## 1. Human Subjects Research
+
+**Status:** This research does NOT involve human subjects.
+
+### Synthetic Benchmark Dataset
+
+- **Data Type:** Synthetically generated CV-JD pairs
+- **PII Status:** All personally identifiable information is fabricated
+- **Real Data:** No real CVs or job descriptions are included in the research dataset
+- **IRB Approval:** Not required (no human subjects)
+
+### Example of Synthetic Data:
+
+```json
+{
+  "pair_id": "swe_001",
+  "cv_text": "ALEX JOHNSON\nSenior Software Engineer\nEmail: alex@email.com...",
+  "jd_text": "Senior Software Engineer - Tech Corp..."
+}
+```
+
+All names, emails, phone numbers, and company names are fabricated.
+
+---
+
+## 2. Privacy and PII Handling
+
+### Benchmark Dataset (Research)
+
+**Privacy Risk:** None
+- Dataset is synthetically generated
+- No real PII exists in `research_package/benchmark_dataset_v1.json`
+- All evaluation results contain only aggregated metrics
+
+### User-Uploaded Data (Streamlit App)
+
+**Privacy Protection Measures:**
+
+1. **Local Processing**
+   - User CVs are processed in the user's session
+   - No permanent storage of raw CV text on servers
+   - Session data is ephemeral
+
+2. **PII Redaction Module**
+   - Module: [`modules/pii_redactor.py`](file:///Users/kaushikkarmakar/Downloads/cv%20maker/cv%20maker%203%20suggestions%20working/ats-cv-optimizer/modules/pii_redactor.py)
+   - Detects and redacts: NAME, EMAIL, PHONE, LOCATION
+   - Uses Faker library for deterministic anonymization
+   - Redaction maps are NOT shared publicly
+
+3. **No User Data Redistribution**
+   - User-uploaded CVs are NOT included in research datasets
+   - Only aggregated evaluation metrics are exported
+   - Raw CV/JD text is never redistributed
+
+4. **Aggregated Results Only**
+   - Evaluation CSVs contain scores, not text
+   - Pair IDs are anonymized (e.g., `132126ed`)
+   - No reverse-engineering to original CVs possible
+
+---
+
+## 3. Data Sharing and Reproducibility
+
+### What IS Shared (Public)
+
+✅ Synthetic benchmark dataset  
+✅ Dataset generation script (`benchmark_dataset.py`)  
+✅ Aggregated evaluation metrics (scores, deltas)  
+✅ Complete source code  
+✅ Configuration files (weights, thresholds)
+
+### What is NOT Shared (Privacy)
+
+❌ User-uploaded CVs  
+❌ User session data  
+❌ Raw text from user inputs  
+❌ PII redaction maps
+
+**Balance:** Maximize reproducibility while protecting user privacy.
+
+---
+
+## 4. Informed Consent
+
+### Research Dataset
+
+**Not Applicable:** Dataset is synthetic; no real individuals involved.
+
+### Streamlit App Users
+
+**User Awareness:**
+- Users voluntarily upload CVs for optimization
+- App purpose is clearly stated: CV optimization for ATS compatibility
+- No hidden data collection
+- Users receive immediate value (optimized CV)
+
+**Recommendation:** Add a privacy notice to the Streamlit app stating:
+> "Your CV is processed locally and is not stored or shared. We only retain aggregated metrics for research purposes."
+
+---
+
+## 5. Potential Harms and Mitigation
+
+### Identified Risks
+
+1. **Unintentional PII Leakage**
+   - **Risk:** User PII accidentally included in research outputs
+   - **Mitigation:** PIIRedactor module + manual review of all shared data
+   - **Status:** Low risk (only aggregated metrics shared)
+
+2. **Bias in Scoring Algorithms**
+   - **Risk:** Scoring algorithms may inadvertently favor certain demographic groups
+   - **Mitigation:** Transparent scoring equations (see [`docs/scoring_equations.md`](file:///Users/kaushikkarmakar/Downloads/cv%20maker/cv%20maker%203%20suggestions%20working/ats-cv-optimizer/docs/scoring_equations.md))
+   - **Future Work:** Fairness audits across demographic attributes
+
+3. **Misuse of Optimization System**
+   - **Risk:** Users may create misleading CVs
+   - **Mitigation:** Compliance validation (buzzword detection, uniqueness checks)
+   - **Guidance:** System promotes truthful representation with better presentation
+
+### Ethical Guidelines Followed
+
+- **Transparency:** All algorithms and scoring weights are documented
+- **Privacy:** User data is not redistributed
+- **Reproducibility:** Full code and synthetic data provided
+- **Integrity:** No fabrication of results; all metrics are verifiable
+
+---
+
+## 6. Licensing and Intellectual Property
+
+### Code License
+
+**Status:** Not currently specified  
+**Current State:** No LICENSE file exists  
+**Ethical Concern:** Source code licensing should be clarified  
+**Recommendation:** Add an open-source license (e.g., MIT, Apache 2.0)
+
+### Dataset License
+
+**Status:** Synthetically generated by this project  
+**Ownership:** Project authors  
+**Recommended License:** Same as code license
+
+**No Third-Party Conflicts:** Dataset is original; no licensing constraints from external sources.
+
+---
+
+## 7. Research Integrity
+
+### Data Authenticity
+
+- ✅ All metrics are computed programmatically (no manual editing)
+- ✅ Evaluation results are timestamped and traceable
+- ✅ Reproducibility manifest includes checksums and versions
+- ✅ No cherry-picking of results
+
+### Code Transparency
+
+- ✅ Full source code provided
+- ✅ Scoring equations documented (see [`docs/scoring_equations.md`](file:///Users/kaushikkarmakar/Downloads/cv%20maker/cv%20maker%203%20suggestions%20working/ats-cv-optimizer/docs/scoring_equations.md))
+- ✅ Configuration files versioned and included
+- ✅ No hidden parameters or black-box components
+
+### Limitations Acknowledged
+
+- Small benchmark dataset (1 pair in v1.0; expandable to 50+)
+- No external validation against commercial ATS systems
+- Synthetic data may not fully represent real-world CV-JD diversity
+
+---
+
+## 8. Compliance Checklist
+
+| Ethical Criterion | Status | Evidence |
+|-------------------|--------|----------|
+| **IRB approval** | ✅ Not required | No human subjects |
+| **Informed consent** | ✅ N/A | Synthetic data |
+| **PII protection** | ✅ Verified | PIIRedactor + no user data redistribution |
+| **Data anonymization** | ✅ Verified | Aggregated metrics only |
+| **Bias mitigation** | ⚠️ Partial | Transparent algorithms; fairness audit pending |
+| **Code transparency** | ✅ Verified | Full source code provided |
+| **Reproducibility** | ✅ Verified | Scripts, configs, and data included |
+| **Licensing clarity** | ⚠️ Pending | No LICENSE file; needs resolution |
+
+---
+
+## 9. Future Ethical Considerations
+
+1. **Expand Benchmark Dataset**
+   - Goal: 50+ CV-JD pairs across 5 domains
+   - Ensure diversity in roles, seniority levels, and industries
+
+2. **Fairness Audit**
+   - Evaluate scoring algorithms for demographic bias
+   - Test across protected attributes (age, gender, ethnicity proxies)
+
+3. **External Validation**
+   - Compare against commercial ATS systems (if ethically feasible)
+   - Collaborate with recruiters for ground-truth validation
+
+4. **Privacy Notice for App**
+   - Add explicit privacy statement to Streamlit app
+   - Document data retention policies
+
+---
+
+## Contact
+
+For ethics-related questions or concerns, contact the project maintainers.
+
+**Last Updated:** 2025-12-28
