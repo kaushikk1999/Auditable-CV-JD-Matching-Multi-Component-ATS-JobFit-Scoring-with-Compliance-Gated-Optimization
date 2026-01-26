@@ -1,0 +1,24 @@
+\begin{table}[ht]
+\centering
+\caption{Single component removal from pair GD\_001 to demonstrate the score reduction for each component.}
+\label{tab:ablation_gd001}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Component Removed} & \textbf{Full} & \textbf{w/o Comp} & \textbf{Drop} & \textbf{Drop \%} & \textbf{Weight} \\
+\midrule
+\multicolumn{6}{l}{\textit{ATS Components}} \\
+Lexical Coverage & 78.5 & 55.6 & 22.9 & 29.2\% & 30% \\
+TF-IDF Relevance & 78.5 & 57.6 & 20.9 & 26.6\% & 25% \\
+Section Distribution & 78.5 & 73.0 & 5.5 & 7.0\% & 10% \\
+TF-IDF Cosine Sim. & 78.5 & 74.4 & 4.1 & 5.2\% & 10% \\
+Fuzzy Matching & 78.5 & 77.2 & 1.3 & 1.7\% & 5% \\
+\midrule
+\multicolumn{6}{l}{\textit{JobFit Components}} \\
+Experience Alignment & 64.5 & 37.3 & 27.2 & 42.2\% & 40% \\
+Summary Similarity & 64.5 & 46.6 & 17.9 & 27.8\% & 30% \\
+Skills Alignment & 64.5 & 56.1 & 8.4 & 13.0\% & 15% \\
+Domain Relevance & 64.5 & 61.3 & 3.2 & 5.0\% & 10% \\
+Education Match & 64.5 & 63.0 & 1.5 & 2.3\% & 5% \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,73 @@
+graph LR
+    %% Nodes styling
+    classDef phaseBox fill:#e1f5fe,stroke:#01579b,stroke-width:1px;
+    classDef outputBox fill:#f1f8e9,stroke:#33691e,stroke-width:1px,stroke-dasharray: 2 2;
+    classDef inputBox fill:#fff9c4,stroke:#fbc02d,stroke-width:1px,rx:5,ry:5;
+    classDef limitBox fill:#ffebee,stroke:#b71c1c,stroke-width:1px,stroke-dasharray: 4 4;
+
+    %% Inputs
+    InputRes(Resume<br/>PDF/DOCX/TXT):::inputBox
+    InputJD(Job Description<br/>PDF/DOCX/TXT):::inputBox
+
+    %% Phase 1
+    subgraph Ph1 [Phase 1: Parsing & Extraction]
+        direction TB
+        P1_Proc[Schema-Validated<br/>LLM Extraction]:::phaseBox
+        P1_Out[Validated JSON<br/>15+ JD Fields]:::outputBox
+        P1_Proc --> P1_Out
+    end
+
+    %% Phase 2
+    subgraph Ph2 [Phase 2: Taxonomy]
+        direction TB
+        P2_Proc[Keyword Taxonomy<br/>5 Categories]:::phaseBox
+        P2_Out[Priority Labels:<br/>Req/Pref/Opt]:::outputBox
+        P2_Proc --> P2_Out
+    end
+
+    %% Phase 3
+    subgraph Ph3 [Phase 3: Gap Analysis]
+        direction TB
+        P3_Proc[Location-Aware<br/>Analysis]:::phaseBox
+        P3_Out[Gap Report:<br/>Present vs Missing]:::outputBox
+        P3_Proc --> P3_Out
+    end
+
+    %% Phase 4
+    subgraph Ph4 [Phase 4: Compliance Gate]
+        direction TB
+        P4_Proc[Deterministic<br/>Auditing]:::phaseBox
+        P4_Out[JSON Audit Report<br/>PASS/FAIL]:::outputBox
+        P4_Proc --> P4_Out
+    end
+
+    %% Phase 5
+    subgraph Ph5 [Phase 5: Dual Scoring]
+        direction TB
+        P5_Proc[ATS + JobFit<br/>Framework]:::phaseBox
+        P5_Out[Component Scores<br/>Sim + Fuzzy]:::outputBox
+        P5_Proc --> P5_Out
+    end
+
+    %% Phase 6
+    subgraph Ph6 [Phase 6: Guided Rewrite]
+        direction TB
+        P6_Proc[Human-in-the-Loop<br/>Generation]:::phaseBox
+        P6_Out[No Fabrication Check<br/>Acceptance Tracking]:::outputBox
+        P6_Proc --> P6_Out
+    end
+
+    %% Limitations Callout
+    Lim[Limitations:<br/>- English-only<br/>- No OCR<br/>- No Synonym Matching]:::limitBox
+
+    %% Flow Connections
+    InputRes --> P1_Proc
+    InputJD --> P1_Proc
+    P1_Out --> P2_Proc
+    P2_Out --> P3_Proc
+    P3_Out --> P4_Proc
+    P4_Out --> P5_Proc
+    P5_Out --> P6_Proc
+
+    %% Limitation Connection
+    Ph1 -.- Lim
